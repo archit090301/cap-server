@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: cap-server
+    env: node
+    plan: free   # or starter/standard depending on your needs
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # You’ll define DB and secret vars in Render dashboard, safer than committing
+      # Example:
+      # - key: DB_HOST
+      #   sync: false
+      # - key: DB_USER
+      #   sync: false
+      # - key: DB_PASSWORD
+      #   sync: false
+      # - key: DB_NAME
+      #   sync: false
+      # - key: SESSION_SECRET
+      #   sync: false
